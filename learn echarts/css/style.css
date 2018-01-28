@@ -1,0 +1,25 @@
+body{
+	background-color: #0a141b;
+}
+
+.content{
+	width: 90%;
+	margin-left: 5%;
+	margin-top:3%;
+}
+
+.title{
+	font-size:30px;
+	font-weight: bold;
+	color:#fff;
+}
+
+.chart{
+	margin-top:2%;
+}
+
+#firstchart{
+	height:400px;
+	width:600px;
+	border:1px solid #fff;
+}
