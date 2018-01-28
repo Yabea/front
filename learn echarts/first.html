@@ -12,7 +12,7 @@
  			echarts使用案例
  		</div>
  		<div class="chart">
- 			<div id="firstchart">
+ 			<div id="firstchart" style="text-align:center">
 	 		</div>
  		</div>
  	</div>
@@ -36,7 +36,8 @@
                 fontSize:12,
                 color:'#FFF',
             },
-            data:['最高温度变化']
+            orient:'vertical',
+            data:['最高温度变化', '最低温度变化']
         },
 	    xAxis: {
 	        type: 'category',
@@ -53,6 +54,15 @@
 	        interval:0,
 	        rotate:45,//倾斜度 -90 至 90 默认为0
 	        },
+
+	        splitLine:{
+                show:true,
+                lineStyle:{
+                    color: 'white',
+                    width:1,
+                    type: 'solid'
+                }
+            },
 	    },
 
 	    yAxis: {
@@ -65,12 +75,27 @@
                     color:'white',
                 }
             },
+            splitArea:{
+                show:true,
+                areaStyle:{
+                    color:['#6a6f71', '#5b6062'],
+                },
+            },
 	    },
-	    series: [{
-	    	name: '最高温度变化',
-	        data: [11, 12, 15, 5, 8, 14, 9],
-	        type: 'line'
-	    }]
+	    series: [
+		    {
+		    	name: '最高温度变化',
+		        data: [11, 12, 15, 5, 8, 14, 9],
+		        type: 'line',
+		        color: 'red'
+		    },
+		    {
+		    	name: '最低温度变化',
+		        data: [2, 1, 5, -3, -2, 1, -1],
+		        type: 'line',
+		        color: ['rgba(12,218,255,0.8)']
+		    },
+	    ]
 	};
 
 	myChart.setOption(option);
