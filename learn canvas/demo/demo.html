@@ -1,8 +1,42 @@
 <html>
-	<body>
-		<canvas id="myCanvas" style="border:1px solid #ddd;" width="1000" height="500"></canvas>
+	<head>
+    <meta charset="UTF-8">
+    <title>Canvas学习</title>
+    <style type="text/css">
+    	p{
+    		text-align: center;
+    	}
+    </style>
+</head>
+
+<body style="background-color: #000;color: #eee;">
+	<h2 style="text-align: center">点击画布可查看对应实例</h2>
+		<div style="margin-left:40%">
+			<div onclick="line()" style="width:200px; height: 100px">
+				<p>canvas绘制直线</p>
+				<canvas id="line" style="border:1px solid #ddd;" width="200" height="100"></canvas>
+			</div>
+
+			<br>
+			<br>
+
+			<div onclick="triangle()" style="width:200px; height: 100px">
+					<p>canvas绘制三角形</p>
+				<canvas id="triangle" style="border:1px solid #ddd;" width="200" height="100"></canvas>
+			</div>
+
+			<br>
+			<br>
+
+			<div onclick="circle()" style="width:200px; height: 100px">
+					<p>canvas绘制圆</p>
+				<canvas id="circle" style="border:1px solid #ddd;" width="200" height="100"></canvas>
+			</div>
+		</div>
 
 		<script type="text/javascript" src="demo.js"></script>
+		<script type="text/javascript" src="bootstrap.min.js"></script>
+
 	</body>
 
 </html>
