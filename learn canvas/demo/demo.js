@@ -1,39 +1,64 @@
+function line(){
+	var myCanvas=document.getElementById("line");
+    myCanvas.width="250";
+    myCanvas.height="120";
 
+    var cxt=myCanvas.getContext("2d");
+  
+    //画直线
+    cxt.moveTo(30, 30);
+    cxt.lineTo(220, 90);
 
-var myCanvas=document.getElementById("myCanvas");
-myCanvas.width="500";
-myCanvas.height="300";
+    //定义画线样式
+    cxt.strokeStyle="rgba(238, 220, 20)";//红色
+    cxt.lineWidth="3";
 
-var cxt=myCanvas.getContext("2d");
+    cxt.lineCap="round";//圆头
 
-//圆
-var x=10,y=10;
-var a=490,b=290;
-var duration=2000;
-var cishu=2000/30;
-var xstep=(a-x)/cishu;
-var ystep=(b-y)/cishu;
-
-
-function huayuan(x,y){
-    cxt.beginPath();
-    cxt.arc(x,y,10,0,Math.PI*2);
-    cxt.fillStyle="red";
-    cxt.fill();
+    cxt.stroke();
 }
 
-huayuan();
-var timer=setInterval(function(){
-     //橡皮擦
-    cxt.clearRect(x-11,y-11,22,22);
+function triangle(){
+	var myCanvas=document.getElementById("triangle");
+    myCanvas.width="250";
+    myCanvas.height="120";
 
-    x+=xstep;
-    y+=ystep;
+    var cxt=myCanvas.getContext("2d");
+    //画三角形
+    cxt.moveTo(60,10);
+    cxt.lineTo(200,50);
+    cxt.lineTo(60, 110);
+    cxt.lineTo(60, 10);
+    cxt.strokeStyle="rgb(43, 154, 191)";
+    cxt.lineWidth="3";
 
-    if(x>=a){
-        x=a;
-        y=b;
-    }
-    huayuan(x,y);
+    cxt.lineCap="round";
 
-},30);
+    cxt.stroke();
+}
+
+function circle(){
+	var myCanvas=document.getElementById("circle");
+    myCanvas.width="250";
+    myCanvas.height="120";
+    var cxt=myCanvas.getContext("2d");
+    cxt.beginPath();
+    cxt.arc(65, 50, 40, 0, Math.PI*2, true);
+    cxt.strokeStyle = '#ffffff';
+	cxt.stroke();
+	cxt.closePath();
+
+	cxt.beginPath();
+	cxt.arc(180, 50, 40, 0, Math.PI*2, true);
+    cxt.strokeStyle = '#ffffff';
+	cxt.stroke();
+	cxt.closePath();
+
+	cxt.beginPath();
+	cxt.arc(130, 60, 60, Math.PI*0.25, Math.PI*0.75, false);
+    cxt.strokeStyle = '#ffffff';
+	cxt.stroke();
+	cxt.closePath();
+}
+
+
